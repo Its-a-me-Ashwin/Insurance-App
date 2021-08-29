@@ -16,6 +16,15 @@ public class Product {
 	private int productQuantity;
 	private String productUrl;
 	
+	/*
+	private float monthlypremium;
+	private float dwellingcoverage;
+	private int personalproperty;
+	private float medicalexpense;
+	private int additional;
+	private float deductible;
+	//private String email;
+	*/
 	
 	public int getPid() {
 		return pid;

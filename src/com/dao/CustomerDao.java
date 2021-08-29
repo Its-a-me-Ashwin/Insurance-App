@@ -60,20 +60,19 @@ public class CustomerDao {
 		}
 	}
 	
-	
-	public int placeQuote(Quote q,String email) {
+	public int placeQuote(Quote q) {
+		System.out.println(q.toString());
+		EntityManager manager = emf.createEntityManager();
+		EntityTransaction tran = manager.getTransaction();
 			
-			EntityManager manager = emf.createEntityManager();
-			EntityTransaction tran = manager.getTransaction();
-				
-				Customer cc = manager.find(Customer.class, email);
-				tran.begin();
-					manager.persist(q);
-					manager.merge(cc);
-				tran.commit();
-			System.out.println("done writing");
-			return 1;
-		}
+			//Customer cc = manager.find(Customer.class, email);
+			tran.begin();
+				manager.persist(q);
+				//manager.merge(cc);
+			tran.commit();
+		return 1;
+	}
+	
 	
 public int placeOrder(String productNames,String email, float totalAmount) {
 		
@@ -102,16 +101,13 @@ public int placeOrder(String productNames,String email, float totalAmount) {
 	}
 	
 	public List<Quote> getQuoteDetails(String email){
+		System.out.print("DAOOOOOO\n");
 		EntityManager manager = emf.createEntityManager();
-		System.out.println("Starting query");
-		Query qry = manager.createQuery("select a from quote a where a.email=?1");
-		System.out.println("q2");
+		Query qry = manager.createQuery("select a from Quote a where a.email=?1");
+		System.out.print(qry.toString());
 		qry.setParameter(1, email);
-		System.out.println("q3");
-		//List<Quote> q = (List<Quote>) manager.find(Quote.class, email);
-		System.out.println("q4");
 		List<Quote> q = qry.getResultList();
-		System.out.println("q5");
+		System.out.print(q.toString());
 		return q;
 	}
 	
@@ -123,7 +119,7 @@ public int placeOrder(String productNames,String email, float totalAmount) {
 	
 	public List<Customer> getAllCustomer() {
 		EntityManager manager = emf.createEntityManager();
-		Query qry = manager.createQuery("select c from customer c");
+		Query qry = manager.createQuery("select c from Customer c");
 		return qry.getResultList();
 	}
 }

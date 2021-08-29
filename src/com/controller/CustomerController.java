@@ -87,7 +87,22 @@ public class CustomerController {
 		qd.setCity(req.getParameter("city"));
 		qd.setState(req.getParameter("state"));
 		qd.setZip(req.getParameter("zip"));
-		mav.setViewName("customerHome.jsp");
+		
+		
+		qd.setFirstName(req.getParameter("firstName"));
+		qd.setLastName(req.getParameter("lastName"));
+		qd.setDob(req.getParameter("dob"));
+		qd.setSsid(req.getParameter("ssid"));
+		
+		
+		qd.setValue(Integer.parseInt(req.getParameter("value")));
+		qd.setRoof(req.getParameter("roof"));
+		qd.setArea(Integer.parseInt(req.getParameter("area")));
+		qd.setFullBaths(Integer.parseInt(req.getParameter("fullBaths")));
+		qd.setHalfBaths(Integer.parseInt(req.getParameter("halfBaths")));
+		
+		
+		mav.setViewName("customerHome.jsp");		
 		
 		/// add call to service
 		customerService.storeQuote(qd,email);

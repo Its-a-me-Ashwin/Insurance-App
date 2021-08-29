@@ -24,15 +24,15 @@ public class QuoteDao {
 	@Autowired
 	EntityManagerFactory emf;
 	
-	public int placeQuote(Quote q,String email) {
+	public int placeQuote(Quote q) {
 		
 		EntityManager manager = emf.createEntityManager();
 		EntityTransaction tran = manager.getTransaction();
 			
-			Customer cc = manager.find(Customer.class, email);
+			//Customer cc = manager.find(Customer.class, email);
 			tran.begin();
 				manager.persist(q);
-				manager.merge(cc);
+				//manager.merge(cc);
 			tran.commit();
 		return 1;
 	}

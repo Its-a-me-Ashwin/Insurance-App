@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bean.Orders;
 import com.service.OrderService;
 import com.bean.Quote;
+import com.bean.Customer;
 @Controller
 public class OrderController {
 
@@ -31,7 +32,10 @@ public class OrderController {
 	@RequestMapping(value = "viewQuotes/{email}")
 	public ModelAndView getQuoteDetails(@PathVariable("email") String email,HttpSession session) {
 		ModelAndView mav = new ModelAndView();
+		System.out.println("Starting controller");
 		List<Quote> listOfOrder = orderService.getAllQuoteDetails(email);
+		System.out.print("Bacc in: ");
+		System.out.println(listOfOrder.toString());
 		session.setAttribute("quoteDetails", listOfOrder);
 		mav.setViewName("redirect:/viewAllQuotes.jsp");
 		return mav;

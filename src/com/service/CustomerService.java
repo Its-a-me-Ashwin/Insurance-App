@@ -1,6 +1,6 @@
 package com.service;
 
-
+import java.util.Random;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +19,24 @@ public class CustomerService {
 	CustomerDao customerDao;
 	
 	public String storeQuote(QuoteDetails qd,String email) {
+		Random rand = new Random();
 		Quote q = new Quote();
 		// add more logic here
-		q.setMonthlyPremium(1000); // change later
-		q.setDwellingCoverage(50);
-		q.setPersonalProperty(1);
-		q.setMedicalexpense(0);
-		q.setAdditional(0);
-		q.setDeductible(0);
+		int base = 1000;
+		base += qd.getArea()*1.5 + qd.getValue();
+		int dwelling = 1000;
+		dwelling += 2000*qd.getFullBaths() + 500*qd.getHalfBaths();
+		
+		q.setMonthlypremium(base); // change later
+		q.setDwellingcoverage(dwelling);
+		q.setPersonalproperty(1);
+		q.setMedicalexpense(500);
+		q.setAdditional(1000);
+		q.setDeductible(100);
+		q.setEmail(email);
+		System.out.println(email);
 		System.out.println("done at service");
-		customerDao.placeQuote(q,email);
+		customerDao.placeQuote(q);
 		return "";
 	}
 	

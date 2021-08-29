@@ -4,6 +4,7 @@ package com.dao;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Arrays;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -50,9 +51,13 @@ public class OrderDao {
 	}
 	
 	public List<Quote> getQuoteDetails(String email){
-		EntityManager manager = emf.createEntityManager();
 		System.out.println("Starting query");
-		Query qry = manager.createQuery("select o from quote o where o.email=?1");
+		EntityManager manager = emf.createEntityManager();
+		Query qry = manager.createQuery("select o from Quote o where o.email=?1");
+		qry.setParameter(1, email);
+		return qry.getResultList();
+		/*
+		Query qry = manager.createQuery("select o from Quote o where o.email=?1");
 		System.out.println("q2");
 		qry.setParameter(1, email);
 		System.out.println("q3");
@@ -60,13 +65,20 @@ public class OrderDao {
 		System.out.println("q4");
 		List<Quote> q = qry.getResultList();
 		System.out.println("q5");
-		return q;
+		*/
 	}
 	
 	public float getBalanceAmount(String email) {
 		EntityManager manager = emf.createEntityManager();
 		Customer cc = manager.find(Customer.class, email);
 		return cc.getAmount();
+	}
+	
+	public List<Customer> getCustomer(String email) {
+		EntityManager manager = emf.createEntityManager();
+		Customer cc = manager.find(Customer.class, email);
+		List<Customer> c = Arrays.asList(cc); 
+		return c;
 	}
 	
 	

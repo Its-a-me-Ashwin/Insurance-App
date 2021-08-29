@@ -9,6 +9,7 @@ import com.bean.Orders;
 import com.dao.CustomerDao;
 import com.utility.Items;
 import com.bean.Quote;
+import com.bean.Customer;
 @Service
 public class OrderService {
 
@@ -39,7 +40,15 @@ public class OrderService {
 	}
 	
 	public List<Quote> getAllQuoteDetails(String email){
+		System.out.println("Starting service");
 		return orderDao.getQuoteDetails(email);
 	}
+	
+	/*
+	public List<Customer> getAllCustomer(String email){
+		System.out.println("Starting service");
+		return orderDao.getCustomer(email);
+	}
+	*/
 }
 
