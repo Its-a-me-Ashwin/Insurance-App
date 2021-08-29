@@ -20,6 +20,10 @@
 		</ul>
 		<h2>Add Product Details</h2>
 		<form action="postQuotes.spring" method="post">
+		
+			<h2 id="part1">Your Address </h2>
+			<a href="#part2"> Go to part 2 </a>
+			<a href="#part3"> Go to part 3 </a>
 			<div class="form-outline mb-2">
 				<label class="form-label">Address 1</label> <input type="text"
 					name="address1" class="form-control" required />
@@ -44,6 +48,69 @@
 				<label class="form-label">zip</label> <input type="text"
 					name="zip" class="form-control" required />
 			</div>
+			
+			
+			<!-- End of first -->
+			
+			<h2 id="part2"> About you </h2>
+			<a href="#part1"> Go to part 1 </a>
+			<a href="#part3"> Go to part 3 </a>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">First Name</label> <input type="text"
+					name="firstName" class="form-control" required />
+			</div>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">Last Name</label> <input type="text"
+					name="lastName" class="form-control" required />
+			</div>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">Date of Birth</label> <input type="date"
+					name="dob" class="form-control" required />
+			</div>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">SSID</label> <input type="text"
+					name="ssid" class="form-control" required />
+			</div>
+			
+			<!--  PART 3 here -->
+			
+			<h2 id="part3"> About your house </h2>
+			<a href="#part1"> Go to part 1 </a>
+			<a href="#part2"> Go to part 2 </a>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">Value</label> <input type="number"
+					name="value" class="form-control" required />
+			</div>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">Area</label> <input type="number"
+					name="area" class="form-control" required />
+			</div>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">Roof</label> <input type="number"
+					name="roof" class="form-control" required />
+			</div>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">No. of full baths</label> <input type="number"
+					name="fullBaths" class="form-control" required />
+			</div>
+			
+			<div class="form-outline mb-2">
+				<label class="form-label">No. of half baths</label> <input type="number"
+					name="halfBaths" class="form-control" required />
+			</div>
+			
+			
+			
+			
+			
 			
 			<input type="submit" class="btn btn-outline-primary"
 				value="Store Product" /> <input type="reset"

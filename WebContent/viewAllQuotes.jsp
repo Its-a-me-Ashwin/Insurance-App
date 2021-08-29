@@ -27,11 +27,11 @@
 	</tr>
 	<core:forEach items="${sessionScope.quoteDetails}" var="orders">
  		<tr>
-			<td>${orders.Id}</td>
-			<td>${orders.MonthlyPremium}</td>
-			<td>${orders.DwellingCoverage}</td>
-			<td>${orders.PersonalProperty}</td>
-			<td>${orders.amount}</td>
+			<td>${orders.qid}</td>
+			<td>${orders.monthlypremium}</td>
+			<td>${orders.dwellingcoverage}</td>
+			<td>${orders.personalproperty}</td>
+			<td>${orders.medicalexpense}</td>
 		</tr>
 </core:forEach>
 </table>
