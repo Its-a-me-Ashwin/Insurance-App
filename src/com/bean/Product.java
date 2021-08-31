@@ -17,7 +17,6 @@ public class Product {
 	private String productUrl;
 	
 	/*
-	private float monthlypremium;
 	private float dwellingcoverage;
 	private int personalproperty;
 	private float medicalexpense;
@@ -25,7 +24,6 @@ public class Product {
 	private float deductible;
 	//private String email;
 	*/
-	
 	public int getPid() {
 		return pid;
 	}

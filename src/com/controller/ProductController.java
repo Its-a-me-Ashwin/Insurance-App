@@ -56,6 +56,8 @@ public class ProductController {
 		List<Product> allProducts = productService.getAllProduct();
 		hs.setAttribute("allProductToCustomer", allProducts);
 		mav.setViewName("displayAllProductToCustomer.jsp");
+		System.out.print("Product");
+		System.out.println(allProducts.toString());
 		return mav;
 	}
 	

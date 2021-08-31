@@ -16,7 +16,7 @@
     <a class="nav-link" href="customerDashboard.spring">Dashboard</a>
   </li>
  </ul>
-<h3>Order Summary</h3>
+<h3>Quotes Summary</h3>
 <table border="1" class="table">
 	<tr>
 		<th>Quote ID</th>

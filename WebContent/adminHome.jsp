@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-	<h2>Grocers Application System - Admin Home</h2>
+	<h2>Insurance Policy Application System - Admin Home</h2>
 	<div class="container">
 		<h2>Welcome to Admin Home Page</h2>
 		<ul class="nav">

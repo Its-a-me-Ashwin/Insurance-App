@@ -36,14 +36,14 @@
 						<input type="text" name="pid" value="${product.pid}" hidden="true" />
 					</div>
 					<h3>
-						Name <span class="badge bg-info">${product.productName}</span>
+						Id <span class="badge bg-info">${product.productName}</span>
 					</h3>
 					<h3>
-						Price <span class="badge bg-info">${product.productPrice}</span>
+						Total Price <span class="badge bg-info">${product.productPrice}</span>
 					</h3>
 
 					<div class="form-outline mb-2">
-						<label class="form-label">Product Quantity</label> <input
+						<label class="form-label">Policy Duration</label> <input
 							type="number" name="quantity" min="1" value="1"
 							class="form-control" />
 					</div>
